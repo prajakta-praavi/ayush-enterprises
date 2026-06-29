@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 42 40% 97%;
+    --foreground: 224 20% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 224 20% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 20% 12%;
+
+    --primary: 160 84% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 47% 11%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 40 24% 95%;
+    --muted-foreground: 225 10% 42%;
+
+    --accent: 41 95% 55%;
+    --accent-foreground: 224 20% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 160 84% 38%;
+
+    --radius: 0.25rem;
+
+    --whatsapp: 142 70% 45%;
+    --shadow-bold: 0 16px 40px -14px hsl(224 20% 12% / 0.35);
+    --shadow-yellow: 0 14px 42px -14px hsl(160 84% 38% / 0.42);
+    --gradient-hero: linear-gradient(135deg, hsl(224 47% 11% / 0.88), hsl(160 84% 38% / 0.34));
+    --gradient-yellow: linear-gradient(135deg, hsl(41 95% 55%), hsl(41 95% 61%));
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 224 35% 6%;
+    --foreground: 42 40% 97%;
+
+    --card: 224 28% 10%;
+    --card-foreground: 42 40% 97%;
+
+    --popover: 224 28% 10%;
+    --popover-foreground: 42 40% 97%;
+
+    --primary: 160 84% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 42 40% 97%;
+
+    --muted: 224 22% 15%;
+    --muted-foreground: 225 10% 72%;
+
+    --accent: 41 95% 55%;
+    --accent-foreground: 224 20% 12%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 18% 18%;
+    --input: 224 18% 18%;
+    --ring: 160 84% 38%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-stroke {
+    -webkit-text-stroke: 2px hsl(var(--secondary));
+    color: transparent;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out both;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.7s ease-out both;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
