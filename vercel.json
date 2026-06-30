@@ -8,8 +8,7 @@
     "backend": {
       "routePrefix": "/backend",
       "framework": "node",
-      "buildCommand": "",
-      "startCommand": "npm run start:backend"
+      "buildCommand": ""
     }
   },
   "rewrites": [
